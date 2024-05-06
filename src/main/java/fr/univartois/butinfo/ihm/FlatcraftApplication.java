@@ -44,6 +44,9 @@ public class FlatcraftApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("flatcraft-view.fxml"));
         Parent viewContent = fxmlLoader.load();
 
+        FlatcraftController controller = fxmlLoader.getController();
+        controller.setStage(stage);
+
         // Ensuite, on la place dans une Scene...
         Scene scene = new Scene(viewContent);
         // que l'on place elle-même dans la fenêtre.

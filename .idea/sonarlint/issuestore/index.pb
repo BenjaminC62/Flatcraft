@@ -7,3 +7,5 @@ p
 @src/main/java/fr/univartois/butinfo/ihm/FlatcraftController.java,5/8/5808000d7b42e53965f44b5b35b5ad479b16cc34
 q
 Asrc/main/java/fr/univartois/butinfo/ihm/FlatcraftApplication.java,1/e/1e8f02c999e3b56d81f97fb31a706128b6e7bc03
+F
+docs/diag.classes.puml,1/a/1ac0c2a15e7630e192e9b30f2fe40e7de1a4eab3

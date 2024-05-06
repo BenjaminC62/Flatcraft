@@ -1,0 +1,16 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+hide empty members
+left to right direction
+class Grille
+
+class Ressource{
+nom : string
+image : string
+}
+Grille *-- "1..*" Ressource
+
+Case *-- "0..1" Grille
+Case *-- "0..1" Ressource
+@enduml

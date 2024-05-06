@@ -1,14 +1,18 @@
 
-—	java:S116"URename this field "Background" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰¥›®8ÂòÈéô1J$622243a7-a122-437b-8e10-e306a60c2691
+—	java:S116"URename this field "Background" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰¥›®8ú‘Šíô1J$3d021150-2f91-4a2b-9ecb-dbf2fc82015b
 Ã
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ï¿×8ÛòÈéô1J$c284c3a9-e65b-4bee-80c5-7f30dd99c001
+java:S1186%"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ï¿×8ú‘Šíô1J$be98bbf4-ae55-4c04-9324-91327c0b3792
 Ä
-java:S1186 "€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(’Ş ¦8ÜòÈéô1J$f6afb751-0541-4b76-890b-8cfaca0a9e0d
+java:S1186*"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(’Ş ¦8û‘Šíô1J$abb95641-8be5-4ef1-9ac9-40b52460125b
 Ä
-java:S1186%"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ƒ“èŸ8ÜòÈéô1J$7513a135-1d1c-44b7-9d57-d47ac36fa7f6
+java:S1186/"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ƒ“èŸ8û‘Šíô1J$ead301fb-fc9a-46f6-9270-520887d1cf9e
+ 
+java:S1450!"]Remove the "backgroundCell" field and declare it as a local variable in the relevant methods.(šÑøì8ü‘Šíô1J$b39c8468-ca1f-4bda-aecd-b27d0aebd73b
+Ÿ
+java:S1450""\Remove the "mainCellFrame" field and declare it as a local variable in the relevant methods.(Ï³ÿ8ü‘Šíô1J$d026762c-257a-458e-844d-fef08caf0d24
 œ
-java:S1450"TRemove the "cells" field and declare it as a local variable in the relevant methods.(òàá÷şÿÿÿÿ8ÍÊèéô1J$8de9e290-f0c5-43bf-997a-519bba1d6bcb
+java:S1450"TRemove the "stage" field and declare it as a local variable in the relevant methods.(‹ğÑœıÿÿÿÿ8Ûë×íô1J$2f3aa256-fb0a-4d83-9b5e-bf032a923150
 q
-java:S1068")Remove this unused "cells" private field.(òàá÷şÿÿÿÿ8ÕÊèéô1J$c228028c-0894-4709-a8ed-a5f9331044c1
+java:S1128	".Remove this unused import 'javafx.scene.Node'.(ÑÖ¬ï8—Åíô1J$d2431999-e511-449c-8c59-6418b178ea82
 w
-java:S1144)"/Remove this unused private "initialize" method.(ˆå¶šûÿÿÿÿ8ÖúÙéô1J$99c8e087-5aa9-46d7-961b-3b3c650b8d05
+java:S11443"/Remove this unused private "initialize" method.(ˆå¶šûÿÿÿÿ8…’Šíô1J$00e13426-4cec-4bb5-97a7-d7783987ce89
