@@ -14,6 +14,8 @@ package fr.univartois.butinfo.ihm.model; /**
  * Tous droits réservés.
  */
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.scene.image.Image;
 
 /**
@@ -49,7 +51,7 @@ public abstract class AbstractMovable {
     /**
      * Les points de vie restants pour cet objet mobile.
      */
-    private int health;
+    private IntegerProperty health;
 
     /**
      * Crée une nouvelle instance d'fr.univartois.butinfo.ihm.model.AbstractMovable.
@@ -61,7 +63,7 @@ public abstract class AbstractMovable {
     protected AbstractMovable(FlatcraftGame game, Image sprite, int initialHealth) {
         this.game = game;
         this.sprite = sprite;
-        this.health = initialHealth;
+        this.health = new SimpleIntegerProperty(initialHealth);
     }
 
     /**
@@ -115,6 +117,10 @@ public abstract class AbstractMovable {
      * @return Les points de vie restants pour cet objet mobile.
      */
     public int getHealth() {
+        return health.get();
+    }
+
+    public IntegerProperty healthProperty(){
         return health;
     }
 
@@ -122,14 +128,14 @@ public abstract class AbstractMovable {
      * Augmente les points de vie de cet objet mobile.
      */
     public void incrementHealth() {
-        health++;
+        health.set(health.get()+1);
     }
 
     /**
      * Diminue les points de vie de cet objet mobile.
      */
     public void decrementHealth() {
-        health--;
+        health.set(health.get()-1);
         if (getHealth() == 0) {
             game.removeMovable(this);
         }
