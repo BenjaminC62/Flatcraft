@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.univartois.butinfo.ihm.FlatcraftController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <bottom>
+            <HBox alignment="CENTER" prefHeight="51.0" prefWidth="600.0" spacing="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClickShowFurnace" style="-fx-background-color: transparent;;" text="Furnace" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClickShowInventory" style="-fx-background-color: transparent;;" text="Inventory" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Life bar" />
+                  <Label fx:id="niveauVie" alignment="CENTER" contentDisplay="CENTER" text="life" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onClickShowCraft" style="-fx-background-color: transparent;;" text="Craft" />
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
+      <GridPane fx:id="mainpane">
+      </GridPane>
+      <GridPane fx:id="Background">
+      </GridPane>
+   </children>
+</StackPane>
