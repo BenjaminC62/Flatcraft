@@ -90,9 +90,12 @@ public final class FlatcraftGame {
      * Prépare la partie de Flatcraft avant qu'elle ne démarre.
      */
     public void prepare() {
-        // TODO Préparer la partie
-        // Il faut initialiser la carte du jeu.
-        // Puis ajouter le joueur à la carte.
+        map = GameMapGenerator.generatePlainMap(getHeight(), getWidth(), cellFactory); // Genere une map
+        controller.initGame(map); // On utilise la fonction de l'interface et on init la map
+        player = new Player(this, spriteStore.createSprite("player")); // this fait reference au game donc this ici = FlatcraftGame et le nom de l'image pour le sprite
+        player.setRow(map.getSoilHeight()); // On le place sur la ligne au milieu (ici le sol)
+        player.setColumn(0); //Toute à gauche
+        controller.addMovable(player); // est on ajoute le player
     }
 
     /**
@@ -110,9 +113,9 @@ public final class FlatcraftGame {
     public void moveLeft(AbstractMovable movable) {
         int column = movable.getColumn();
         if (((column - 1) >= 0)) {
-            // TODO Retirer l'objet mobile du jeu.
+            controller.removeMovable(player);
             movable.setColumn(column - 1);
-            // TODO Rajouter l'objet mobile dans le jeu.
+            controller.addMovable(player);
         }
     }
 
@@ -131,9 +134,9 @@ public final class FlatcraftGame {
     public void moveRight(AbstractMovable movable) {
         int column = movable.getColumn();
         if (((column + 1) < map.getWidth())) {
-            // TODO Retirer l'objet mobile du jeu.
+            controller.removeMovable(player);
             movable.setColumn(column + 1);
-            // TODO Rajouter l'objet mobile dans le jeu.
+            controller.addMovable(player);
         }
     }
 
@@ -192,7 +195,7 @@ public final class FlatcraftGame {
      * @param movable L'objet mobile à retirer.
      */
     public void removeMovable(AbstractMovable movable) {
-        // TODO Retirer l'objet mobile du jeu.
+        controller.removeMovable(movable);
     }
 
     /**
