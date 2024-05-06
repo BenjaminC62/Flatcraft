@@ -53,6 +53,8 @@ public final class FlatcraftGame {
      */
     private Player player;
 
+    private IFlatcraftController controller;
+
     /**
      * Crée une nouvelle instance de fr.univartois.butinfo.ihm.model.FlatcraftGame.
      *
@@ -204,6 +206,10 @@ public final class FlatcraftGame {
         int row = movable.getRow();
         int column = movable.getColumn();
         return map.getAt(row, column);
+    }
+
+    public void setController(IFlatcraftController controller){
+        this.controller = controller;
     }
 
 }

@@ -65,7 +65,7 @@ public final class Cell {
      * @param image L'image représentant la cellule.
      */
     public Cell(Image image) {
-        this.image = image;
+        this.sprite = image;
     }
 
     /**
@@ -76,7 +76,7 @@ public final class Cell {
      */
     public Cell(Resource resource) {
         this.resource = resource;
-        this.image = resource.getSprite();
+        this.sprite = resource.getSprite();
     }
 
     /**
