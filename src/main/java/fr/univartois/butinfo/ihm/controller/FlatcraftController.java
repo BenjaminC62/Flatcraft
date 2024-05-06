@@ -2,11 +2,10 @@
  * Sample Skeleton for 'flatcraft-view.fxml' Controller Class
  */
 
-package fr.univartois.butinfo.ihm;
+package fr.univartois.butinfo.ihm.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;

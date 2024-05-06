@@ -18,6 +18,7 @@ package fr.univartois.butinfo.ihm;
 
 import java.io.IOException;
 
+import fr.univartois.butinfo.ihm.controller.FlatcraftController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
