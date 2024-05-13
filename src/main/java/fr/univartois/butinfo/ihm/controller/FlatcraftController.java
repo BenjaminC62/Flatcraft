@@ -4,6 +4,11 @@
 
 package fr.univartois.butinfo.ihm.controller;
 
+import fr.univartois.butinfo.ihm.model.AbstractMovable;
+import fr.univartois.butinfo.ihm.model.FlatcraftGame;
+import fr.univartois.butinfo.ihm.model.GameMap;
+import fr.univartois.butinfo.ihm.model.IFlatcraftController;
+import javafx.beans.property.IntegerProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -11,7 +16,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-public class FlatcraftController {
+public class FlatcraftController implements IFlatcraftController {
 
     private static final int WIDTH = 1280;
     private static final int HEIGHT = 720;
@@ -70,4 +75,28 @@ public class FlatcraftController {
         this.stage = stage;
     }
 
+    @Override
+    public void setFlatcraftGame(FlatcraftGame game) {
+
+    }
+
+    @Override
+    public void initGame(GameMap map) {
+
+    }
+
+    @Override
+    public void addMovable(AbstractMovable movable) {
+
+    }
+
+    @Override
+    public void removeMovable(AbstractMovable movable) {
+
+    }
+
+    @Override
+    public void setHealthProperty(IntegerProperty healthProperty) {
+
+    }
 }

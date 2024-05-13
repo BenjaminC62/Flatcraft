@@ -14,6 +14,8 @@ package fr.univartois.butinfo.ihm.model; /**
  * Tous droits réservés.
  */
 
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.scene.image.Image;
 
 /**
@@ -44,7 +46,7 @@ public final class Cell {
     /**
      * Le sprite représentant le contenu de cette cellule sur la carte.
      */
-    private Image sprite;
+    private ObjectProperty<Image> sprite;
 
     /**
      * Crée une nouvelle instance de fr.univartois.butinfo.ihm.model.Cell.
@@ -56,6 +58,7 @@ public final class Cell {
     public Cell(int row, int column) {
         this.row = row;
         this.column = column;
+        sprite = new SimpleObjectProperty<>();
     }
 
     /**
@@ -65,7 +68,7 @@ public final class Cell {
      * @param image L'image représentant la cellule.
      */
     public Cell(Image image) {
-        this.sprite = image;
+        this.sprite = new SimpleObjectProperty<>(image);
     }
 
     /**
@@ -76,7 +79,7 @@ public final class Cell {
      */
     public Cell(Resource resource) {
         this.resource = resource;
-        this.sprite = resource.getSprite();
+        this.sprite.set(SimpleObjectProperty<Image>(resource.getSprite()));
     }
 
     /**
@@ -121,6 +124,10 @@ public final class Cell {
      * @return Le sprite représentant cette cellule.
      */
     public Image getSprite() {
+        return sprite.get();
+    }
+
+    public ObjectProperty<Image> spriteProperty() {
         return sprite;
     }
 
@@ -132,11 +139,11 @@ public final class Cell {
     public void setResource(Resource resource) {
         if (resource == null) {
             this.resource = null;
-            this.sprite = null;
+            this.sprite = new SimpleObjectProperty<>(); //A Check
 
         } else {
             this.resource = resource;
-            this.sprite = resource.getSprite();
+            this.sprite.set(resource.getSprite());
         }
     }
 
@@ -147,7 +154,7 @@ public final class Cell {
      */
     public void replaceBy(Cell cell) {
         this.resource = cell.resource;
-        this.sprite = cell.getSprite();
+        this.sprite.set(cell.getSprite());
     }
 
     /**

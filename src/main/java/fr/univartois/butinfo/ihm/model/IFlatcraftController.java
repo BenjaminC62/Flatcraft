@@ -8,5 +8,5 @@ public interface IFlatcraftController {
     void initGame(GameMap map);
     void addMovable(AbstractMovable movable);
     void removeMovable(AbstractMovable movable);
-    IntegerProperty setHealthProperty(IntegerProperty healthProperty);
+    void setHealthProperty(IntegerProperty healthProperty);
 }

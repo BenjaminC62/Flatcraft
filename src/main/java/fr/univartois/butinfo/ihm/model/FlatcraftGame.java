@@ -96,7 +96,7 @@ public final class FlatcraftGame {
         player.setRow(map.getSoilHeight()); // On le place sur la ligne au milieu (ici le sol)
         player.setColumn(0); //Toute à gauche
         controller.addMovable(player); // est on ajoute le player
-        controller.setHealthProperty(player.healthProperty());
+        controller.setHealthProperty(player.healthProperty()); // On ajoute la vie au player
     }
 
 

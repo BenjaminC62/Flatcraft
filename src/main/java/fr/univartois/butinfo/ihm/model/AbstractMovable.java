@@ -51,7 +51,7 @@ public abstract class AbstractMovable {
     /**
      * Les points de vie restants pour cet objet mobile.
      */
-    private IntegerProperty health;
+    private final IntegerProperty health;
 
     /**
      * Crée une nouvelle instance d'fr.univartois.butinfo.ihm.model.AbstractMovable.
