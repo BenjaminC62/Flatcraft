@@ -16,7 +16,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class FlatcraftController implements IFlatcraftController {
@@ -93,13 +92,13 @@ public class FlatcraftController implements IFlatcraftController {
     }
 
     @Override
-    public void addMovable(AbstractMovable movable) {
+    public void showMovable(AbstractMovable movable) {
         mainCellFrame[movable.getRow()][movable.getColumn()].setImage(movable.getSprite());
     }
 
     @Override
-    public void removeMovable(AbstractMovable movable) {
-
+    public void hideMovable(AbstractMovable movable) {
+        mainCellFrame[movable.getRow()][movable.getColumn()].setImage(movable.getSprite(null));
     }
 
     @Override

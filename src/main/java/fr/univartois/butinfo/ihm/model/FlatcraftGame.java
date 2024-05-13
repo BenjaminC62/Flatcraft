@@ -95,7 +95,7 @@ public final class FlatcraftGame {
         player = new Player(this, spriteStore.createSprite("player")); // this fait reference au game donc this ici = FlatcraftGame et le nom de l'image pour le sprite
         player.setRow(map.getSoilHeight()); // On le place sur la ligne au milieu (ici le sol)
         player.setColumn(0); //Toute à gauche
-        controller.addMovable(player); // est on ajoute le player
+        controller.showMovable(player); // est on ajoute le player
         controller.setHealthProperty(player.healthProperty()); // On ajoute la vie au player
     }
 
@@ -115,9 +115,9 @@ public final class FlatcraftGame {
     public void moveLeft(AbstractMovable movable) {
         int column = movable.getColumn();
         if (((column - 1) >= 0)) {
-            controller.removeMovable(player);
+            controller.hideMovable(player);
             movable.setColumn(column - 1);
-            controller.addMovable(player);
+            controller.showMovable(player);
         }
     }
 
@@ -136,9 +136,9 @@ public final class FlatcraftGame {
     public void moveRight(AbstractMovable movable) {
         int column = movable.getColumn();
         if (((column + 1) < map.getWidth())) {
-            controller.removeMovable(player);
+            controller.hideMovable(player);
             movable.setColumn(column + 1);
-            controller.addMovable(player);
+            controller.showMovable(player);
         }
     }
 
@@ -197,7 +197,7 @@ public final class FlatcraftGame {
      * @param movable L'objet mobile à retirer.
      */
     public void removeMovable(AbstractMovable movable) {
-        controller.removeMovable(movable);
+        controller.hideMovable(movable);
     }
 
     /**
