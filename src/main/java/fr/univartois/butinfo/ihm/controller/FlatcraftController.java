@@ -16,6 +16,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FlatcraftController implements IFlatcraftController {
 
     private static final int WIDTH = 1280;
@@ -23,7 +26,6 @@ public class FlatcraftController implements IFlatcraftController {
     private static final int CELLS_LENGHT = 30;
 
     private Stage stage;
-
 
     @FXML // fx:id="Background"
     private GridPane Background; // Value injected by FXMLLoader
@@ -36,6 +38,11 @@ public class FlatcraftController implements IFlatcraftController {
 
     private ImageView[][] backgroundCell;
     private ImageView[][] mainCellFrame;
+    private List<AbstractMovable> movables;
+
+    /* Attribut complétant l'interface */
+    private FlatcraftGame game;
+    private GameMap map;
 
     @FXML
     void onClickShowCraft(ActionEvent event) {
@@ -77,7 +84,7 @@ public class FlatcraftController implements IFlatcraftController {
 
     @Override
     public void setFlatcraftGame(FlatcraftGame game) {
-
+        this.game = game;
     }
 
     @Override
@@ -87,7 +94,7 @@ public class FlatcraftController implements IFlatcraftController {
 
     @Override
     public void addMovable(AbstractMovable movable) {
-
+        mainCellFrame[movable.getRow()][movable.getColumn()].setImage(movable.getSprite());
     }
 
     @Override

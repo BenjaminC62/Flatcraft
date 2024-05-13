@@ -46,7 +46,7 @@ public final class Cell {
     /**
      * Le sprite représentant le contenu de cette cellule sur la carte.
      */
-    private ObjectProperty<Image> sprite;
+    private final ObjectProperty<Image> sprite;
 
     /**
      * Crée une nouvelle instance de fr.univartois.butinfo.ihm.model.Cell.
@@ -79,7 +79,7 @@ public final class Cell {
      */
     public Cell(Resource resource) {
         this.resource = resource;
-        this.sprite.set(resource.getSprite());
+        this.sprite = new SimpleObjectProperty<>(resource.getSprite());
     }
 
     /**
@@ -139,7 +139,7 @@ public final class Cell {
     public void setResource(Resource resource) {
         if (resource == null) {
             this.resource = null;
-            this.sprite = new SimpleObjectProperty<>(); //A Check
+            this.sprite.set(null);
 
         } else {
             this.resource = resource;
