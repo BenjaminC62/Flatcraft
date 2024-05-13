@@ -79,7 +79,7 @@ public final class Cell {
      */
     public Cell(Resource resource) {
         this.resource = resource;
-        this.sprite.set(SimpleObjectProperty<Image>(resource.getSprite()));
+        this.sprite.set(resource.getSprite());
     }
 
     /**
