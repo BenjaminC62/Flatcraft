@@ -99,6 +99,7 @@ public final class FlatcraftGame {
         controller.setHealthProperty(player.healthProperty());
     }
 
+
     /**
      * Fait se déplacer le joueur vers la gauche.
      */
