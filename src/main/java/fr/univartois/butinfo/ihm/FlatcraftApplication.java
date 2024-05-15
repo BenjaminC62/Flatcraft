@@ -19,6 +19,7 @@ package fr.univartois.butinfo.ihm;
 import java.io.IOException;
 
 import fr.univartois.butinfo.ihm.controller.FlatcraftController;
+import fr.univartois.butinfo.ihm.model.FlatcraftGame;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -55,6 +56,11 @@ public class FlatcraftApplication extends Application {
 
         // On peut ensuite donner un titre à la fenêtre.
         stage.setTitle("Flatcraft");
+
+        FlatcraftGame game = new FlatcraftGame(1200, 900);
+        game.setController(controller);
+        controller.setFlatcraftGame(game);
+        game.prepare();
 
         // Enfin, on affiche la fenêtre.
         stage.show();

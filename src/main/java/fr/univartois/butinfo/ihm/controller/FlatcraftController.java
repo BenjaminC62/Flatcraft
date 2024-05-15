@@ -14,10 +14,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-import java.awt.event.KeyEvent;
 import java.util.List;
 
 public class FlatcraftController implements IFlatcraftController {
@@ -97,13 +97,14 @@ public class FlatcraftController implements IFlatcraftController {
                 backgroundCell[i][j].imageProperty().bind(map.getAt(i,j).spriteProperty()); //Permet d'adapter la map automatiquement avec un link entre le background et la map proprety
             }
         }
-        stage.addEventFilter(KeyEvent.KEY_PRESSED, (KeyEvent e) ->{
-                if (e.() == KeyCode.LEFT) {
-                    game.moveLeft();
-                } else if (e.getCode() == KeyCode.RIGHT) {
-                    game.moveRight();
-                }
-        }
+        stage.addEventFilter(KeyEvent.KEY_PRESSED, e ->{
+            KeyCode code = e.getCode();
+            if (e.getCode() == KeyCode.LEFT) {
+                game.moveLeft();
+            } else if (e.getCode() == KeyCode.RIGHT) {
+                game.moveRight();
+            }
+        });
     }
 
     @Override
