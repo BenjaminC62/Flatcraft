@@ -13,9 +13,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
+import java.awt.event.KeyEvent;
 import java.util.List;
 
 public class FlatcraftController implements IFlatcraftController {
@@ -42,6 +44,8 @@ public class FlatcraftController implements IFlatcraftController {
     /* Attribut complétant l'interface */
     private FlatcraftGame game;
     private GameMap map;
+
+    private IntegerProperty healthProperty;
 
     @FXML
     void onClickShowCraft(ActionEvent event) {
@@ -87,8 +91,19 @@ public class FlatcraftController implements IFlatcraftController {
     }
 
     @Override
-    public void initGame(GameMap map) {
-
+    public void initGame(GameMap map) { // Parcour de la map
+        for(int i = 0; i < map.getHeight(); i++){
+            for (int j = 0; j < map.getWidth(); j++){
+                backgroundCell[i][j].imageProperty().bind(map.getAt(i,j).spriteProperty()); //Permet d'adapter la map automatiquement avec un link entre le background et la map proprety
+            }
+        }
+        stage.addEventFilter(KeyEvent.KEY_PRESSED, (KeyEvent e) ->{
+                if (e.() == KeyCode.LEFT) {
+                    game.moveLeft();
+                } else if (e.getCode() == KeyCode.RIGHT) {
+                    game.moveRight();
+                }
+        }
     }
 
     @Override
@@ -98,11 +113,12 @@ public class FlatcraftController implements IFlatcraftController {
 
     @Override
     public void hideMovable(AbstractMovable movable) {
-        mainCellFrame[movable.getRow()][movable.getColumn()].setImage(movable.getSprite(null));
+        mainCellFrame[movable.getRow()][movable.getColumn()].setImage(null);
     }
 
     @Override
     public void setHealthProperty(IntegerProperty healthProperty) {
-
+        this.healthProperty = healthProperty;
+        niveauVie.textProperty().bind(healthProperty.asString()); // On lie le valeur du texte du label du niveau de vie au healthProperty
     }
 }
