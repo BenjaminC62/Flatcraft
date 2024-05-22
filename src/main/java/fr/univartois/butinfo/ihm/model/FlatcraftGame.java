@@ -142,6 +142,7 @@ public final class FlatcraftGame {
         }
     }
 
+
     /**
      * Déplace un objet mobile en tenant compte de la gravité.
      *

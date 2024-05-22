@@ -16,6 +16,8 @@ package fr.univartois.butinfo.ihm.model; /**
 
 import java.util.NoSuchElementException;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.image.Image;
 
 /**
@@ -27,6 +29,8 @@ import javafx.scene.image.Image;
  */
 public final class Player extends AbstractMovable {
 
+    private ObservableList<Resource> inventory = FXCollections.observableArrayList();
+
     /**
      * Crée une nouvelle instance de fr.univartois.butinfo.ihm.model.Player.
      *
@@ -37,13 +41,17 @@ public final class Player extends AbstractMovable {
         super(game, sprite, 3);
     }
 
+    public ObservableList<Resource> getInventory() {
+        return inventory;
+    }
+
     /**
      * Ajoute un objet à l'inventaire de ce joueur.
      *
      * @param resource L'objet à ajouter.
      */
     public void addToInventory(Resource resource) {
-        // TODO : Ajouter l'objet à l'inventaire du joueur.
+        inventory.add(resource);
     }
 
     /**
@@ -54,7 +62,7 @@ public final class Player extends AbstractMovable {
      * @throws NoSuchElementException Si l'objet n'est pas présent dans l'inventaire.
      */
     public void removeFromInventory(Resource resource) {
-        // TODO : Retirer l'objet de l'inventaire du joueur.
+        inventory.remove(resource);
     }
 
 }
