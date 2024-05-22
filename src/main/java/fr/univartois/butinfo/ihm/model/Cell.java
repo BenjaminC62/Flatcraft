@@ -158,7 +158,7 @@ public final class Cell {
     }
 
     /**
-     * Déplace un objet mobile du jeu si cette cellule le permet.
+     * Déplace un objet mobile du jeu vers le bas si cette cellule le permet.
      * Par exemple, si une cellule ne contient pas de ressource, l'objet peut "passer à
      * travers" cette cellule.
      *

@@ -22,8 +22,8 @@ import java.util.List;
 
 public class FlatcraftController implements IFlatcraftController {
 
-    private static final int WIDTH = 1280;
-    private static final int HEIGHT = 720;
+    private static final int WIDTH = 1100;
+    private static final int HEIGHT = 640;
     private static final int CELLS_LENGHT = 30;
 
     private Stage stage;
@@ -99,6 +99,16 @@ public class FlatcraftController implements IFlatcraftController {
             }
         }
         stage.addEventFilter(KeyEvent.KEY_PRESSED, e ->{
+            if(e.isAltDown()){
+                if(e.getCode() == KeyCode.LEFT){
+                    game.digLeft();
+                }
+                else if (e.getCode() == KeyCode.RIGHT){
+                    game.digRight();
+                } else if (e.getCode() == KeyCode.DOWN) {
+                    game.digDown();
+                }
+            }
             if (e.getCode() == KeyCode.LEFT) {
                 game.moveLeft();
             } else if (e.getCode() == KeyCode.RIGHT) {

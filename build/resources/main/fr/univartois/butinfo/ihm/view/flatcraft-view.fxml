@@ -35,9 +35,9 @@
             </HBox>
          </bottom>
       </BorderPane>
-      <GridPane fx:id="mainpane" alignment="CENTER" gridLinesVisible="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
-      </GridPane>
       <GridPane fx:id="background" alignment="CENTER" gridLinesVisible="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+      </GridPane>
+      <GridPane fx:id="mainpane" alignment="CENTER" gridLinesVisible="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
       </GridPane>
    </children>
 </StackPane>

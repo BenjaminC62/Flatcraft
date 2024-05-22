@@ -52,13 +52,13 @@ public class FlatcraftApplication extends Application {
         // On peut ensuite donner un titre à la fenêtre.
         stage.setTitle("Flatcraft");
 
-        FlatcraftGame game = new FlatcraftGame(1280/32, 720/32);
+        FlatcraftGame game = new FlatcraftGame(1100/30, 640/30);
         game.setController(controller);
         controller.setFlatcraftGame(game);
         game.prepare();
 
 
-        Scene scene = new Scene(viewContent, 1280, 720);
+        Scene scene = new Scene(viewContent, 1100, 640);
         stage.setScene(scene);
 
         // Enfin, on affiche la fenêtre.
