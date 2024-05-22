@@ -43,7 +43,7 @@ public class FlatcraftApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         // Il faut d'abord récupérer la description de la vue (au format FXML).
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("flatcraft-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fr/univartois/butinfo/ihm/view/flatcraft-view.fxml"));
         Parent viewContent = fxmlLoader.load();
 
         FlatcraftController controller = fxmlLoader.getController();
@@ -57,7 +57,7 @@ public class FlatcraftApplication extends Application {
         // On peut ensuite donner un titre à la fenêtre.
         stage.setTitle("Flatcraft");
 
-        FlatcraftGame game = new FlatcraftGame(1200, 900);
+        FlatcraftGame game = new FlatcraftGame(1280/32, 720/32);
         game.setController(controller);
         controller.setFlatcraftGame(game);
         game.prepare();

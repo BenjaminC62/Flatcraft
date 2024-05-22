@@ -80,7 +80,7 @@ public final class SpriteStore {
      */
     private Image loadImage(String name) {
         try {
-            URL urlImage = getClass().getResource("../view/images/default_" + name + ".png");
+            URL urlImage = getClass().getResource("/fr/univartois/butinfo/ihm/view/images/default_\"" + name + ".png");
             return new Image(urlImage.toExternalForm(), getSpriteSize(), getSpriteSize(), true, true);
 
         } catch (NullPointerException | IllegalArgumentException e) {
