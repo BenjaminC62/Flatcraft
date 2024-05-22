@@ -97,7 +97,6 @@ public final class FlatcraftGame {
         player.setColumn(0); //Toute à gauche
         controller.showMovable(player); // est on ajoute le player
         controller.setHealthProperty(player.healthProperty()); // On ajoute la vie au player
-
     }
 
 

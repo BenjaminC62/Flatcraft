@@ -49,11 +49,6 @@ public class FlatcraftApplication extends Application {
         FlatcraftController controller = fxmlLoader.getController();
         controller.setStage(stage);
 
-        // Ensuite, on la place dans une Scene...
-        Scene scene = new Scene(viewContent);
-        // que l'on place elle-même dans la fenêtre.
-        stage.setScene(scene);
-
         // On peut ensuite donner un titre à la fenêtre.
         stage.setTitle("Flatcraft");
 
@@ -61,6 +56,10 @@ public class FlatcraftApplication extends Application {
         game.setController(controller);
         controller.setFlatcraftGame(game);
         game.prepare();
+
+
+        Scene scene = new Scene(viewContent, 1280, 720);
+        stage.setScene(scene);
 
         // Enfin, on affiche la fenêtre.
         stage.show();
