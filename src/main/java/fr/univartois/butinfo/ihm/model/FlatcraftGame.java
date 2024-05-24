@@ -93,7 +93,7 @@ public final class FlatcraftGame {
         map = GameMapGenerator.generatePlainMap(getHeight(), getWidth(), cellFactory); // Genere une map
         controller.initGame(map); // On utilise la fonction de l'interface et on init la map
         player = new Player(this, spriteStore.createSprite("tool_diamondpick")); // this fait reference au game donc this ici = FlatcraftGame et le nom de l'image pour le sprite
-        player.setRow(map.getSoilHeight()); // On le place sur la ligne au milieu (ici le sol)
+        player.setRow(map.getSoilHeight()-1); // On le place sur la ligne au milieu (ici le sol)
         player.setColumn(0); //Toute à gauche
         controller.showMovable(player); // est on ajoute le player
         controller.setHealthProperty(player.healthProperty()); // On ajoute la vie au player

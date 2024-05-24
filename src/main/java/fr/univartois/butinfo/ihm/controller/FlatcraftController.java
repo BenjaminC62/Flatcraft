@@ -4,13 +4,14 @@
 
 package fr.univartois.butinfo.ihm.controller;
 
-import fr.univartois.butinfo.ihm.model.AbstractMovable;
-import fr.univartois.butinfo.ihm.model.FlatcraftGame;
-import fr.univartois.butinfo.ihm.model.GameMap;
-import fr.univartois.butinfo.ihm.model.IFlatcraftController;
+import com.sun.scenario.effect.InvertMask;
+import fr.univartois.butinfo.ihm.model.*;
 import javafx.beans.property.IntegerProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -18,6 +19,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.List;
 
 public class FlatcraftController implements IFlatcraftController {
@@ -44,8 +46,13 @@ public class FlatcraftController implements IFlatcraftController {
     /* Attribut complétant l'interface */
     private FlatcraftGame game;
     private GameMap map;
+    private Player player;
 
     private IntegerProperty healthProperty;
+
+    public void setPlayer(Player player){
+        this.player = player;
+    }
 
     @FXML
     void onClickShowCraft(ActionEvent event) {
@@ -58,8 +65,17 @@ public class FlatcraftController implements IFlatcraftController {
     }
 
     @FXML
-    void onClickShowInventory(ActionEvent event) {
+    void onClickShowInventory(ActionEvent event) throws IOException {
+        // Il faut d'abord récupérer la description de la vue (au format FXML).
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fr/univartois/butinfo/ihm/view/inventory-view.fxml"));
+        Parent viewContent = fxmlLoader.load();
 
+        InventoryController controllerInventory = fxmlLoader.getController();
+        controllerInventory.setStage(stage);
+        controllerInventory.getInventory(player.getInventory());
+        Scene scene = new Scene(viewContent);
+
+        stage.setScene(scene);
     }
 
     @FXML
@@ -119,7 +135,10 @@ public class FlatcraftController implements IFlatcraftController {
 
     @Override
     public void showMovable(AbstractMovable movable) {
-        mainCellFrame[movable.getRow()][movable.getColumn()].setImage(movable.getSprite());
+        mainCellFrame[movable.getRow()][movable.getColumn()].setImage(movable.getSprite()); // affihce les truc a afficher sur la map
+        if (movable instanceof Player p){ // Permet de verifier ci ce qu'on ajoute est de la classe
+            setPlayer(p); //Alors ont ajoute
+        }
     }
 
     @Override
