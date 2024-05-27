@@ -50,6 +50,7 @@ public class FlatcraftController implements IFlatcraftController {
 
     private IntegerProperty healthProperty;
 
+
     public void setPlayer(Player player){
         this.player = player;
     }

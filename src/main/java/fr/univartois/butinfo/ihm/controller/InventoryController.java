@@ -36,11 +36,7 @@ public class InventoryController {
         FlatcraftController controller = fxmlLoader.getController();
         controller.setStage(stage);
 
-        FlatcraftGame game = new FlatcraftGame(1100/30, 640/30);
-        game.setController(controller);
-        controller.setFlatcraftGame(game);
-
-        Scene scene = new Scene(viewContent, 1100, 640);
+        Scene scene = new Scene(viewContent);
         stage.setScene(scene);
     }
 
