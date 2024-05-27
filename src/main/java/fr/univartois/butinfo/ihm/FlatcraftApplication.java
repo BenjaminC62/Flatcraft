@@ -58,8 +58,11 @@ public class FlatcraftApplication extends Application {
         game.prepare();
 
 
+
         Scene scene = new Scene(viewContent, 1100, 640);
         stage.setScene(scene);
+
+        controller.setScene(scene);
 
         // Enfin, on affiche la fenêtre.
         stage.show();

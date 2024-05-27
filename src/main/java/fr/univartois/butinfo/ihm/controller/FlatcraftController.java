@@ -52,7 +52,6 @@ public class FlatcraftController implements IFlatcraftController {
 
     private Scene scene;
 
-
     public void setScene(Scene scene){
         this.scene = scene;
     }
@@ -75,15 +74,17 @@ public class FlatcraftController implements IFlatcraftController {
     void onClickShowInventory(ActionEvent event) throws IOException {
         // Il faut d'abord récupérer la description de la vue (au format FXML).
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fr/univartois/butinfo/ihm/view/inventory-view.fxml"));
-        Parent viewContent = fxmlLoader.load();
+        Parent viewContent = fxmlLoader.load(); //creer la view qui avec le truc au dessus
 
-        InventoryController controllerInventory = fxmlLoader.getController();
+        InventoryController controllerInventory = fxmlLoader.getController(); // recup le controller
 
-        controllerInventory.setStage(stage);
-        controllerInventory.getInventory(player.getInventory());
-        Scene scene = new Scene(viewContent);
+        controllerInventory.setStage(stage); // On ajoute une var stage dans le controller
+        controllerInventory.getInventory(player.getInventory()); //faut l'inventaire
+        controllerInventory.setScene(scene);
 
-        stage.setScene(scene);
+        Scene scene = new Scene(viewContent); // On recup la la vue du jeu
+
+        stage.setScene(scene); // On la mes au stage
     }
 
     @FXML

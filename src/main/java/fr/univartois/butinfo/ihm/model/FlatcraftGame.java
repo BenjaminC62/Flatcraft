@@ -14,6 +14,10 @@ package fr.univartois.butinfo.ihm.model; /**
  * Tous droits réservés.
  */
 
+import fr.univartois.butinfo.ihm.model.craft.RuleParser;
+
+import java.io.IOException;
+
 /**
  * La classe {@link FlatcraftGame} permet de gérer une partie du jeu Flatcraft.
  *
@@ -89,7 +93,7 @@ public final class FlatcraftGame {
     /**
      * Prépare la partie de Flatcraft avant qu'elle ne démarre.
      */
-    public void prepare() {
+    public void prepare() throws IOException {
         map = GameMapGenerator.generatePlainMap(getHeight(), getWidth(), cellFactory); // Genere une map
         controller.initGame(map); // On utilise la fonction de l'interface et on init la map
         player = new Player(this, spriteStore.createSprite("tool_diamondpick")); // this fait reference au game donc this ici = FlatcraftGame et le nom de l'image pour le sprite
@@ -97,6 +101,9 @@ public final class FlatcraftGame {
         player.setColumn(0); //Toute à gauche
         controller.showMovable(player); // est on ajoute le player
         controller.setHealthProperty(player.healthProperty()); // On ajoute la vie au player
+        RuleParser ruleParser = new RuleParser("/fr/univartois/butinfo/ihm/view/craftrules.txt");
+        ruleParser.parse();
+        
     }
 
 

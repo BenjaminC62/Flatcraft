@@ -22,7 +22,6 @@ public class InventoryController {
 
     private Scene scene;
 
-
     private Stage stage;
 
     @FXML
@@ -31,21 +30,12 @@ public class InventoryController {
     @FXML
     private Label nom;
 
-    public void setGameScene(){
-        stage.setScene(this.scene);
+    public void setScene(Scene scene){
+        this.scene = scene;
     }
 
     @FXML
     void onClickCloseInventory(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fr/univartois/butinfo/ihm/view/flatcraft-view.fxml"));
-        Parent viewContent = fxmlLoader.load();
-
-        FlatcraftController controller = fxmlLoader.getController();
-
-        controller.setStage(stage);
-        controller.setScene(this.scene);
-
-        Scene scene = new Scene(viewContent);
         stage.setScene(scene);
     }
 
