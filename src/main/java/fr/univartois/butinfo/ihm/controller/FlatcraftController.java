@@ -50,6 +50,12 @@ public class FlatcraftController implements IFlatcraftController {
 
     private IntegerProperty healthProperty;
 
+    private Scene scene;
+
+
+    public void setScene(Scene scene){
+        this.scene = scene;
+    }
 
     public void setPlayer(Player player){
         this.player = player;
@@ -72,6 +78,7 @@ public class FlatcraftController implements IFlatcraftController {
         Parent viewContent = fxmlLoader.load();
 
         InventoryController controllerInventory = fxmlLoader.getController();
+
         controllerInventory.setStage(stage);
         controllerInventory.getInventory(player.getInventory());
         Scene scene = new Scene(viewContent);

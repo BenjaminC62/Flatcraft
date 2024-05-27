@@ -91,4 +91,8 @@ public final class Resource {
         return false;
     }
 
+    @Override
+    public String toString() {
+        return name;
+    }
 }
