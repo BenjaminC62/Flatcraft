@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.univartois.butinfo.ihm.controller.InventoryController">
+   <center>
+      <SplitPane dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="329.0" prefWidth="177.0">
+                     <children>
+                        <Label text="Elem inventory :" />
+                        <ListView fx:id="listViewInventory" prefHeight="318.0" prefWidth="178.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <VBox alignment="CENTER" layoutX="91.0" layoutY="66.0" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label fx:id="nom" text="Label" />
+                        <ImageView fx:id="labelDisplayImageView" fitHeight="173.0" fitWidth="235.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </center>
+   <top>
+      <HBox alignment="TOP_RIGHT" prefHeight="36.0" prefWidth="600.0" BorderPane.alignment="TOP_RIGHT">
+         <children>
+            <Button contentDisplay="RIGHT" mnemonicParsing="false" onAction="#onClickCloseInventory" style="-fx-background-color: transparent; -fx-cursor: pointer;;" text="X" />
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox prefHeight="31.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>

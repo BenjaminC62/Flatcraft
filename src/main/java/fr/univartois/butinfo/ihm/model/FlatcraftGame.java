@@ -14,6 +14,7 @@ package fr.univartois.butinfo.ihm.model; /**
  * Tous droits réservés.
  */
 
+import fr.univartois.butinfo.ihm.model.craft.Crafter;
 import fr.univartois.butinfo.ihm.model.craft.RuleParser;
 
 import java.io.IOException;
@@ -59,6 +60,8 @@ public final class FlatcraftGame {
 
     private IFlatcraftController controller;
 
+    private Crafter readRule;
+
     /**
      * Crée une nouvelle instance de fr.univartois.butinfo.ihm.model.FlatcraftGame.
      *
@@ -103,7 +106,7 @@ public final class FlatcraftGame {
         controller.setHealthProperty(player.healthProperty()); // On ajoute la vie au player
         RuleParser ruleParser = new RuleParser("/fr/univartois/butinfo/ihm/view/craftrules.txt");
         ruleParser.parse();
-        
+        readRule = ruleParser.getCrafter();
     }
 
 
