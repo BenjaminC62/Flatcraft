@@ -58,7 +58,12 @@ public final class FlatcraftGame {
      */
     private Player player;
 
+    //Liasion entre model et controller
     private IFlatcraftController controller;
+
+    public void setController(IFlatcraftController controller){
+        this.controller = controller;
+    }
 
     private Crafter readRule;
 
@@ -226,8 +231,6 @@ public final class FlatcraftGame {
         return map.getAt(row, column);
     }
 
-    public void setController(IFlatcraftController controller){
-        this.controller = controller;
-    }
+
 
 }

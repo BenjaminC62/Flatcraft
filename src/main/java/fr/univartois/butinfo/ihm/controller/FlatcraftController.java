@@ -61,8 +61,20 @@ public class FlatcraftController implements IFlatcraftController {
     }
 
     @FXML
-    void onClickShowCraft(ActionEvent event) {
+    void onClickShowCraft(ActionEvent event) throws IOException {
+        // Il faut d'abord récupérer la description de la vue (au format FXML).
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fr/univartois/butinfo/ihm/view/tableCraft-view.fxml"));
+        Parent viewContent = fxmlLoader.load(); //creer la view qui avec le truc au dessus
 
+        TableCraftController controllerCraft = fxmlLoader.getController(); // recup le controller
+
+        controllerCraft.setStage(stage); // On ajoute une var stage dans le controller
+        controllerCraft.getInventory(player.getInventory()); //faut l'inventaire
+        controllerCraft.setGameScene(scene);
+
+        Scene scene = new Scene(viewContent); // On recup la la vue du jeu
+
+        stage.setScene(scene); // On la mes au stage
     }
 
     @FXML

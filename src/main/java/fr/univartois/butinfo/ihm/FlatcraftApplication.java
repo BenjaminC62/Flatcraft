@@ -43,7 +43,7 @@ public class FlatcraftApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         // Il faut d'abord récupérer la description de la vue (au format FXML).
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fr/univartois/butinfo/ihm/view/flatcraft-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("view/flatcraft-view.fxml"));
         Parent viewContent = fxmlLoader.load();
 
         FlatcraftController controller = fxmlLoader.getController();
@@ -56,8 +56,6 @@ public class FlatcraftApplication extends Application {
         game.setController(controller);
         controller.setFlatcraftGame(game);
         game.prepare();
-
-
 
         Scene scene = new Scene(viewContent, 1100, 640);
 
